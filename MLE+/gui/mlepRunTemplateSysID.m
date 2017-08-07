@@ -154,7 +154,8 @@ while kStep <= MAXSTEPS
         cmd = 'normal';
     else 
         try
-        [inputStruct, mlep.data.userdata] = feval(mlep.data.funcHandle, cmd, mlepOut, mlepIn, time(1:kStep), kStep, mlep.data.userdata); %.data.userdata NEED TO CHANGE,eplusOutPrev, eplusInPrev, time, userdata
+            %display(~isfield(mlep.data, 'userdata'))
+            [inputStruct, mlep.data.userdata] = feval(mlep.data.funcHandle, cmd, mlepOut, mlepIn, time(1:kStep), kStep, mlep.data.userdata); %.data.userdata NEED TO CHANGE,eplusOutPrev, eplusInPrev, time, userdata
         catch err
             if (strcmp(err.identifier,'MATLAB:unassignedOutputs'))
                 if isempty(mlep.data.inputTableData)

@@ -1,4 +1,4 @@
-function [eplus_in_curr, userdata] = control_file_blind(cmd,eplus_out_prev, eplus_in_prev, time, stepNumber, userdata)
+function [eplus_in_curr, userdata] = control_file_blind_angle(cmd,eplus_out_prev, eplus_in_prev, time, stepNumber, userdata)
 % ---------------INPUTS---------------
 % eplus_in_prev - Data Structure% eplus_in_prev.u1 - Vector state for variable "u1"
 % eplus_in_prev.u2 - Vector state for variable "u2"
@@ -20,7 +20,7 @@ elseif strcmp(cmd,'normal')
     % Outputs
     Solar_Beam_Incident_Cos = eplus_out_prev.CosAngle(end);
     Zone_Sensible_Cool_Rate = eplus_out_prev.WestCoolRate(end);
-    Zone_West_Temperature = eplus_out_prev.WestTemp(end);
+    % Zone_West_Temperature = eplus_out_prev.WestTemp(end);
     Zone_West_Solar = eplus_out_prev.ExtSolar(end);
     
     % CALCULATIONS

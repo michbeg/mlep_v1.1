@@ -2,11 +2,11 @@ function installMlep()
 % INSTALLMLEP code to install MLE+
 %      Run this script before using MLE+.
 %
-%      installMlep() does not return anything. 
+%      installMlep() does not return anything.
 %
 %      In installMlep you need to spedicy whether you want to use the GUI
 %      mode or the Manual mode. Set manualInstall = 0 if you do not want to
-%      use the GUI. 
+%      use the GUI.
 
 % Last Modified by Willy Bernal willyg@seas.upenn.edu 30-Jul-2013 16:29:59
 
@@ -51,7 +51,7 @@ addpath([pwd filesep 'gui' filesep 'model3d']);
 addpath([pwd filesep 'bacnet-tools-0.7.1']);
 
 %% GUILAYOUT PATH
-run(['GUILayout-v1p13' filesep 'install']);
+% run(['GUILayout-v1p13' filesep 'install']);
 
 %% INSTALLATION DIALOG
 % CREATE FIGURE

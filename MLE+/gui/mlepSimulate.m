@@ -3,12 +3,12 @@ function [mlep] = mlepSimulate(myhandle)
 % Retrieve data
 mlep = guidata(myhandle);
 
-mlep.simulateTab = uitab('parent',mlep.guiTab); % ,'title','4. Simulate'
+mlep.simulateTab = uitab('parent',mlep.guiTab,'title','4. Simulate');
 %set(mlep.guiTab,'SelectedTab',mlep.simulateTab);
 mlep.simulatePanel = uiextras.Panel( 'Parent', mlep.simulateTab, 'TitlePosition', 'LeftTop', 'BorderType', 'none', 'Padding', 15);
     mlep.simulateBox = uiextras.VBox( 'Parent', mlep.simulatePanel, 'Spacing', 15, 'Padding', 0 );
         % VARIABLES/ PLOT
-        mlep.simulateFeedbackPanel = uiextras.Panel('Parent', mlep.simulateBox, 'Padding', 0, 'BorderType', 'none'); % etchedin etchedout beveledin beveledout line  
+        mlep.simulateFeedbackPanel = uiextras.Panel('Parent', mlep.simulateBox, 'Padding', 0, 'BorderType', 'none'); % etchedin etchedout beveledin beveledout line
         mlep.simulateFeedback = uiextras.HBox( 'Parent', mlep.simulateFeedbackPanel, 'Padding', 0, 'Spacing', 20 );
             % VARIABLE/BUTTONS
             mlep.simulateVariablesPanel = uiextras.Panel( 'Parent', mlep.simulateFeedback, 'Title', 'Variables', 'TitlePosition', 'LeftTop', 'Padding', 0, 'FontSize', mlep.fontMedium );
@@ -24,10 +24,10 @@ mlep.simulatePanel = uiextras.Panel( 'Parent', mlep.simulateTab, 'TitlePosition'
                 %uicontrol( 'Parent', mlep.simulateFeedback, 'Background', 'b' )
             % GRAPH
             mlep.simulateGraph = uiextras.Panel( 'Parent', mlep.simulateFeedback, 'Title', 'Plot', 'TitlePosition', 'LeftTop', 'FontSize', mlep.fontMedium, 'Padding', 10 );
-                % TAB 
+                % TAB
                 mlep.simulateTab = uiextras.TabPanel( 'Parent', mlep.simulateGraph, 'Padding', 0, 'TabSize', 150, 'FontSize', mlep.fontMedium );
                     %% Tab 1
-                    % PANEL TAB 1 GRAPH 
+                    % PANEL TAB 1 GRAPH
                     mlep.simulateGraphPanel = uiextras.Panel( 'Parent', mlep.simulateTab, 'BorderType', 'none' );
                         mlep.simulateGraphBox = uiextras.HBox( 'Parent', mlep.simulateGraphPanel, 'Padding', 0, 'Spacing', 0 );
                             mlep.graph = axes( 'Parent', mlep.simulateGraphBox, 'HandleVisibility', 'callback', 'ActivePositionProperty', 'OuterPosition');
@@ -36,15 +36,15 @@ mlep.simulatePanel = uiextras.Panel( 'Parent', mlep.simulateTab, 'TitlePosition'
                             mlep.gridToggle = uicontrol( 'style', 'checkbox', 'String', {'Grid'}, 'Parent', mlep.simulateGraphBoxGrid, 'Callback', {@mlepSimulateFunction,myhandle,'grid'}, 'FontSize', mlep.fontMedium );
                         % SIZE GRAPH BOX
                         set( mlep.simulateGraphBox, 'Sizes', [-7 -1] );
-                    %% Tab 
+                    %% Tab
                     % PANEL TAB 2 DXF
                     mlep.simulateDxfPanel = uiextras.Panel( 'Parent', mlep.simulateTab, 'BorderType', 'none' );
                         % AXES
                         mlep.dxfAxes = axes( 'Parent', mlep.simulateDxfPanel, 'HandleVisibility', 'callback', 'ActivePositionProperty', 'OuterPosition');
-                            
+
                 % Set Default Tab and Names
                 mlep.simulateTab.TabNames = {'1. Graph ', '2. Building '};
-                mlep.simulateTab.SelectedChild = 1;        
+                mlep.simulateTab.SelectedChild = 1;
 
     % SET SIZE
     %set( mlep.simulateBox, 'Sizes', [-6 100]);
@@ -52,7 +52,7 @@ mlep.simulatePanel = uiextras.Panel( 'Parent', mlep.simulateTab, 'TitlePosition'
     set( mlep.simulateFeedbackBox1, 'Sizes', [-0.3 -3 -1] );
     set( mlep.simulateFeedbackBox2, 'Sizes', [-1 -1], 'Spacing', 10);
 
-    % Store Data        
-guidata(myhandle,mlep);      
+    % Store Data
+guidata(myhandle,mlep);
 end
 

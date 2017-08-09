@@ -103,14 +103,15 @@ end
     %set(mlep.guiTab,'SelectedTab',mlep.presentationTab);          % Replaces SelectedIndex property
 
 % Get the underlying Java reference (use hidden property)
-jTabGroup = getappdata(handle(mlep.guiTab),'JTabbedPane');
+% jTabGroup = getappdata(handle(mlep.guiTab),'JTabbedPane'); % doesn't work
+% jTabGroup = findjobj('class','JTabbedPane'); % works but gives some warnings
 % Equivalent manners to set a red tab foreground:
 % jTabGroup.setForegroundAt(1,java.awt.Color(1.0,0,0)); % tab #1
-jTabGroup.setTitleAt(0,'<html><font face="helvetica", color="black",size=5>1. Start');
-jTabGroup.setTitleAt(1,'<html><font face="helvetica", color="black",size=5>2. System ID');
-jTabGroup.setTitleAt(2,'<html><font face="helvetica", color="black",size=5>3. Control');
-jTabGroup.setTitleAt(3,'<html><font face="helvetica", color="black",size=5>4. Simulation');
-jTabGroup.setTitleAt(4,'<html><font face="helvetica", color="black",size=5>5. BACnet');
+% jTabGroup.setTitleAt(0,'<html><font face="helvetica", color="black",size=5>1. Start');
+% jTabGroup.setTitleAt(1,'<html><font face="helvetica", color="black",size=5>2. System ID');
+% jTabGroup.setTitleAt(2,'<html><font face="helvetica", color="black",size=5>3. Control');
+% jTabGroup.setTitleAt(3,'<html><font face="helvetica", color="black",size=5>4. Simulation');
+% jTabGroup.setTitleAt(4,'<html><font face="helvetica", color="black",size=5>5. BACnet');
 %jTabGroup.setTitleAt(2,'<html><div style="background:#ffff00">3. CONTROL');'<html><b><i><font size=+2>Tab #2'
 % jTabGroup.setForeground(java.awt.Color.red);
 
